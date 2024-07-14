@@ -1,0 +1,19 @@
+{
+  // Consistencia de codigo
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+
+  // Limpieza de arbol de carpetas/archivos
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.next": true,
+    "**/node_modules": true,
+    "**/next-env.d.ts": true
+  }
+}
