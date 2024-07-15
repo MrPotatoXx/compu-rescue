@@ -1,25 +1,6 @@
 export default function Diagnostico() {
   return (
     <main className="flex flex-col min-h-screen">
-      <header className="bg-primary text-primary-foreground px-4 lg:px-6 h-14 flex items-center">
-        <a className="flex items-center justify-center" href="#">
-          Home
-        </a>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
-          <a
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
-          >
-            Home
-          </a>
-          <a
-            className="text-sm font-medium hover:underline underline-offset-4"
-            href="#"
-          >
-            Diagnostico
-          </a>
-        </nav>
-      </header>
       <div className="flex-1 py-12 md:py-24 lg:py-32">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
