@@ -1,7 +1,4 @@
-//https://sdk.vercel.ai/examples/next-app/basics/streaming-text-generation
-//https://sdk.vercel.ai/examples/next-app/basics/streaming-object-generation
-//https://sdk.vercel.ai/examples/next-pages/basics/streaming-object-generation
-import { openai, createOpenAI } from '@ai-sdk/openai';
+import { createOpenAI } from '@ai-sdk/openai';
 import { z } from 'zod';
 import { streamObject } from 'ai';
 
@@ -54,7 +51,7 @@ export async function getDiagnosis(context: string) {
   const prompt = buildPrompt(context);
 
   const result = await streamObject({
-    model: groq('llama3-8b-8192'),
+    model: groq('llama3-70b-8192'),
     schema: diagnosisSchema,
     prompt: prompt,
     maxTokens : 1000,
