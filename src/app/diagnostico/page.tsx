@@ -14,21 +14,22 @@ export default function Diagnostico() {
   });
 
   const handleSubmit = () => {
-
     let details = {};
     if (pcType === 'notebook') {
       details = notebookDetails;
     } else if (pcType === 'desktop') {
       details = desktopDetails;
     }
-    // Construir el objeto de detalles
+
     const requestData = {
       type: pcType,
       details: details,
-      problemDescription: pcType === 'desktop' ? desktopDetails.problemDescription : ''
+      problemDescription: pcType === 'desktop' ? desktopDetails.problemDescription : notebookDetails.problemDescription
     };
+
     submit(requestData);
   };
+
   const handleEdit = () => {
     setPcType(null);
   };
