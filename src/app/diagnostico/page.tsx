@@ -40,16 +40,19 @@ export default function Diagnostico() {
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           <div className="rounded-lg border bg-white shadow-sm">
             <div className="flex flex-col space-y-1.5 p-6">
-              <h3 className="tracking-tight text-3xl font-bold">Diagnóstico</h3>
-              <p className="text-sm text-gray-500">Selecciona según el computador que tengas</p>
+              <h3 className="tracking-tight text-3xl font-bold text-center">Diagnóstico</h3>
+              <p className="text-sm text-gray-500 text-center">Selecciona según el computador que tengas</p>
+              <p className="text-sm text-gray-500 text-center">Recuerda que este diagnostico no valida que el problema sea real</p>
               {!pcType ? (
                 <div className="flex justify-around py-6">
                   <div
                     onClick={() => setPcType('notebook')}
                     className="cursor-pointer p-4 border rounded-lg flex flex-col items-center hover:bg-gray-100"
                   >
-                    <svg className="h-12 w-12 mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                    <svg className="h-32 w-32 mb-2"
+                      viewBox="0 0 32 32">
+                      <rect x="15" y="23" width="2" height="2"/>
+                      <path d="M6 1v30h20V1H6zM24 29H8V15h16V29zM24 13H8V9h16V13zM24 7H8V3h16V7z"/>
                     </svg>
                     <p>Notebook</p>
                   </div>
@@ -57,8 +60,11 @@ export default function Diagnostico() {
                     onClick={() => setPcType('desktop')}
                     className="cursor-pointer p-4 border rounded-lg flex flex-col items-center hover:bg-gray-100"
                   >
-                    <svg className="h-12 w-12 mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                    <svg className="h-32 w-32 mb-2" viewBox="0 0 32 32" fill="#000000">
+                      <g fill="none" fill-rule="evenodd">
+                        <path d="m0 0h32v32h-32z"/>
+                        <path d="m29 2-.0007764 18.876 2.2815528 9.124h-30.56155281l2.28-9.12.00077641-18.88zm-1.782 20h-22.437l-1.5 6h25.437zm-.218-18h-22v16h22z" fill="#000000" fill-rule="nonzero"/>
+                      </g>
                     </svg>
                     <p>Escritorio</p>
                   </div>
@@ -124,21 +130,23 @@ export default function Diagnostico() {
             </div>
             {object?.problems && (
               <div className="p-6">
-                {object.problems.map((problem, index) => (
-                  <div key={index} className="mb-4">
-                    <p><strong>Problema {index + 1}:</strong> {problem}</p>
-                    {object.solutions && object.solutions[index] && (
-                      <>
-                        <p><strong>Soluciones:</strong></p>
-                        <ul className="list-disc list-inside">
-                          {object.solutions[index].map((solution, i) => (
-                            <li key={i}>{solution}</li>
-                          ))}
-                        </ul>
-                      </>
-                    )}
-                  </div>
-                ))}
+                <div className="grid gap-6 lg:grid-cols-3">
+                  {object.problems.map((problem, index) => (
+                    <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-md">
+                      <p>{problem}</p>
+                      {object.solutions && object.solutions[index] && (
+                        <>
+                          <h5 className="font-semibold mt-4">Soluciones:</h5>
+                          <ul className="list-disc list-inside">
+                            {object.solutions[index].map((solution, i) => (
+                              <li key={i}>{solution}</li>
+                            ))}
+                          </ul>
+                        </>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
           </div>
