@@ -59,7 +59,7 @@ export async function getDiagnosis(details: { type: string; brand?: string; mode
   const prompt = buildPrompt(details);
 
   const result = await streamObject({
-    model: groq('llama3-8b-8192'),
+    model: groq('llama-3.1-70b-versatile'),
     schema: diagnosisSchema,
     prompt: prompt,
     maxTokens : 1000,
