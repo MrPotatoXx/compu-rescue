@@ -47,7 +47,7 @@ Para que la aplicación funcione correctamente, necesitas una API key de Groq. P
 Luego, crea un archivo `.env.local` en la raíz del proyecto y agrega la API key de la siguiente manera:
 
 ```bash
-NEXT_PUBLIC_GROQ_API_KEY=tu_api_key_aqui
+GROQ_API_KEY=tu_api_key_aqui
 ```
 
 ## 🚀 Ejecutar la Aplicación
