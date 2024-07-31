@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🖥️ Web App de Diagnóstico de PC
 
-## Getting Started
+Esta es una aplicación web diseñada para diagnosticar y solucionar problemas comunes en computadoras portátiles y de escritorio. Permite a los usuarios seleccionar el tipo de equipo (notebook o de escritorio), ingresar detalles específicos sobre el mismo y describir el problema experimentado. Con esta información, la aplicación genera posibles problemas y soluciones, ayudando a los usuarios a resolverlos de manera eficiente.
 
-First, run the development server:
+## ✨ Características
+
+- **🖱️ Diagnóstico de PC**: Selección entre notebook o PC de escritorio para un diagnóstico personalizado.
+- **💡 Generación de Soluciones**: Utiliza la API de Groq para generar diagnósticos y soluciones basadas en la descripción del problema.
+- **🎨 Interfaz Amigable**: UI simple e intuitiva que facilita la introducción de detalles necesarios por parte del usuario.
+
+## 🛠️ Tecnologías
+
+- **⚛️ Next.js**: Framework de React para el desarrollo de la aplicación web.
+- **🎨 Tailwind CSS**: Framework de utilidades CSS para un diseño moderno y eficiente.
+- **🤖 Vercel AI SDK**: Integración con la API de Groq para el procesamiento de diagnósticos.
+- **📦 pnpm**: Gestor de paquetes utilizado para manejar las dependencias del proyecto.
+- **🧠 Groq API**: Servicio basado en IA para la generación de diagnósticos.
+
+## ⚙️ Configuración
+
+### 🔑 Prerrequisitos
+
+- Node.js
+- pnpm (puedes instalarlo siguiendo las instrucciones en [pnpm.io](https://pnpm.io/installation))
+
+### 📥 Clonar el repositorio
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/MrPotatoXx/compu-rescue.git
+cd compu-rescue
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 📦 Instalación de Dependencias
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Instala las dependencias del proyecto usando pnpm:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+pnpm install
+```
+### 🔐 Configuración de la API Key
 
-## Learn More
+Para que la aplicación funcione correctamente, necesitas una API key de Groq. Puedes obtenerla siguiendo estos pasos:
 
-To learn more about Next.js, take a look at the following resources:
+1. Ve a [Groq Console](https://console.groq.com/keys) y crea una nueva API key.
+2. Copia la API key.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Luego, crea un archivo `.env.local` en la raíz del proyecto y agrega la API key de la siguiente manera:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+NEXT_PUBLIC_GROQ_API_KEY=tu_api_key_aqui
+```
 
-## Deploy on Vercel
+## 🚀 Ejecutar la Aplicación
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Una vez que hayas configurado todo, puedes iniciar la aplicación en modo desarrollo con el siguiente comando:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+pnpm dev
+```
+Esto iniciará el servidor de desarrollo en http://localhost:3000.
+
+## 🤝 Contribuciones
+
+Si quieres contribuir al proyecto, por favor abre un pull request o crea un issue para discutir los cambios propuestos.
